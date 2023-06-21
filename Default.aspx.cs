@@ -113,7 +113,7 @@ namespace DataLoader
                     {
                         while (reader.Read())
                         {
-                            string name = reader.GetString(10); 
+                            string name = reader.GetString(10);
                             Block.Items.Add(name);
                         }
                     }
@@ -148,13 +148,13 @@ namespace DataLoader
             int extYear = int.Parse(ext_year.Value);
             string remarks = remark.Value;
             int areaId = int.Parse(area_id.Value);
+            ClientScript.RegisterStartupScript(this.GetType(), "connectsuccess", "alert(" + leaseNumber + ");", true);
 
-           
 
             try
             {
                 myConnection.Open();
-                
+
                 Console.WriteLine("hello");
 
                 // Prepare SQL insert statement
@@ -165,8 +165,8 @@ namespace DataLoader
                     "@projectName, @blockName, TO_DATE(@effectiveDate, 'YYYY-MM-DD'), @extYear, @remarks, " +
                     "SYSDATE, 'admin', SYSDATE, 'admin', @areaId)";*/
 
-                string insertSql = "INSERT INTO W_LEASE_ (ID, LEASE_ID, BLOCK_TYPE, NELP_ROUND, MINISTRY_REFERENCE_NO, LEASE_NUMBER, STATE_NAME, PROJECT, BLOCK_NAME, EFFECTIVE_DATE, EXT_YEAR, REMARKS, INSERT_DATE, INSERT_USER, UPDATE_DATE, UPDATE_USER, AREA_ID) VALUES ('" + id1 + "','" + leaseId + "','" + blockType + "','" + nelpRound + "','" + ministryReferenceNo + "','" + leaseNumber + "','" + stateName + "','" + projectName + "','" + blockName + "','" + effectiveDate + "','"+ extYear + "','"+ remarks + "','"+ areaId + "'); ";
-                ClientScript.RegisterStartupScript(this.GetType(), "connectsuccess", "alert(insertsql);", true);
+                string insertSql = "INSERT INTO W_LEASE_ (ID, LEASE_ID, BLOCK_TYPE, NELP_ROUND, MINISTRY_REFERENCE_NO, LEASE_NUMBER, STATE_NAME, PROJECT, BLOCK_NAME, EFFECTIVE_DATE, EXT_YEAR, REMARKS, INSERT_DATE, INSERT_USER, UPDATE_DATE, UPDATE_USER, AREA_ID) VALUES ('" + id1 + "','" + leaseId + "','" + blockType + "','" + nelpRound + "','" + ministryReferenceNo + "','" + leaseNumber + "','" + stateName + "','" + projectName + "','" + blockName + "','" + effectiveDate + "','" + extYear + "','" + remarks + "','" + areaId + "'); ";
+
                 using (OracleCommand command = new OracleCommand(insertSql, myConnection))
                 {
 
@@ -201,7 +201,7 @@ namespace DataLoader
 
                 myConnection.Close();
 
-                
+
             }
             catch (Exception ex)
             {

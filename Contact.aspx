@@ -1,46 +1,63 @@
 ﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="DataLoader.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <main aria-labelledby="title">
+    <main>
         <div class="container w-50 border border-1 rounded rounded-3 p-5">
-        <h1>W_AREA</h1>
-        <hr/>
-        <form>
-            <label for="id">ID:</label>
-            <input type="number" id="id" name="id"><br>
-          
-            <label for="w_lease_id">W_LEASE_ID:</label>
-            <input type="number" id="w_lease_id" name="w_lease_id"><br>
-          
-            <label for="seq">SEQ:</label>
-            <input type="number" id="seq" name="seq"><br>
-          
-            <label for="lat_str_dms">LAT_STR_DMS:</label>
-            <input type="text" id="lat_str_dms" name="lat_str_dms"><br>
-          
-            <label for="lon_str_dms">LON_STR_DMS:</label>
-            <input type="text" id="lon_str_dms" name="lon_str_dms"><br>
-          
-            <label for="lat_dd">LAT_DD:</label>
-            <input type="number" id="lat_dd" name="lat_dd"><br>
-          
-            <label for="lon_dd">LON_DD:</label>
-            <input type="number" id="lon_dd" name="lon_dd"><br>
-          
-            <label for="insert_date">INSERT_DATE:</label>
-            <input type="date" id="insert_date" name="insert_date"><br>
+            <h1>Shape Point form</h1>
+            <hr />
+            <form class="mt-4" id="Form_submit">
+                <div class="mb-3">
+                    <label for="id" class="form-label">ID:</label>
+                    <input type="number" id="id" name="id" runat="server" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="w_lease_id" class="form-label">W_LEASE_ID:</label>
+                    <input type="number" id="w_lease_id" name="w_lease_id" runat="server" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="seq" class="form-label">SEQ:</label>
+                    <input type="number" id="seq" name="seq" runat="server" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="lat_str_dms" class="form-label">LAT_STR_DMS:</label>
+                    <input type="text" id="lat_str_dms" name="lat_str_dms" runat="server" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="lon_str_dms" class="form-label">LON_STR_DMS:</label>
+                    <input type="text" id="lon_str_dms" name="lon_str_dms" runat="server" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="lat_dd" class="form-label">LAT_DD:</label>
+                    <input type="number" id="lat_dd" name="lat_dd" runat="server" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="lon_dd" class="form-label">LON_DD:</label>
+                    <input type="number" id="lon_dd" name="lon_dd" runat="server" class="form-control">
+                </div>
+
+
+                <%--<label for="insert_date">INSERT_DATE:</label>
+            <input type="date" id="insert_date" name="insert_date" runat="server"><br>
           
             <label for="insert_user">INSERT_USER_:</label>
-            <input type="text" id="insert_user" name="insert_user"><br>
+            <input type="text" id="insert_user" name="insert_user" runat="server"><br>
           
             <label for="update_date">UPDATE_DATE:</label>
-            <input type="date" id="update_date" name="update_date"><br>
+            <input type="date" id="update_date" name="update_date" runat="server"><br>
           
             <label for="update_user">UPDATE_USER_:</label>
-            <input type="text" id="update_user" name="update_user"><br>
-          
-            <input type="submit" value="Submit">
-          </form>
-          </div>
+            <input type="text" id="update_user" name="update_user" runat="server"><br>--%>
+
+                <asp:Button class="btn btn-primary" ID="SubmitFormClick" Text="Submit" runat="server" />
+            </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
     </main>
 </asp:Content>
