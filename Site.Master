@@ -46,13 +46,14 @@
                 </button>
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/About">About</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">W_LEASE_</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/About">W_AREA_</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">W_SHAPE_POINTS_</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+        
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

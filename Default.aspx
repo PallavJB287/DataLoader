@@ -3,14 +3,12 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <main>
-        
-
         <div class="container w-50 border border-1 rounded rounded-3 p-5">
         <h1>Lease Form</h1>
         <hr/>
-        <form class="mt-4" id="Form_submit" runat="server">
+        <form class="mt-4" id="Form_submit">
             <div class="mb-3">
-                <label for="id" class="form-label">ID</label>
+                <label for="id1" class="form-label">ID</label>
                 <asp:Textbox TextMode="Number" class="form-control" ID="id1" runat="server" placeholder="Enter id"></asp:Textbox>
               </div>
 
@@ -21,7 +19,7 @@
 
               <div class="mb-3">
                 <label for="block_type" class="form-label">BLOCK_TYPE</label>
-                <select class="form-select"  runat="server" >
+                <select class="form-select" id="block_type" runat="server" >
                     <option value="1">REL</option>
                     <option value="2">PEL_OLD</option>
                     <option value="3">ML</option>
@@ -93,7 +91,7 @@
 
 
              
-              <button class="btn btn-primary" onclick="SubmitForm_Click"  runat="server" >Submit</button>
+              <asp:Button class="btn btn-primary" ID="SubmitFormClick" OnClick="SubmitForm_Click" Text="Submit" runat="server" />
 
         </form>
     </div>

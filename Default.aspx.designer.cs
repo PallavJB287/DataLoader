@@ -15,15 +15,6 @@ namespace DataLoader
     {
 
         /// <summary>
-        /// Form_submit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm Form_submit;
-
-        /// <summary>
         /// id1 control.
         /// </summary>
         /// <remarks>
@@ -40,6 +31,15 @@ namespace DataLoader
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText lease_id;
+
+        /// <summary>
+        /// block_type control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect block_type;
 
         /// <summary>
         /// nelp_round control.
@@ -130,5 +130,14 @@ namespace DataLoader
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl area_id;
+
+        /// <summary>
+        /// SubmitFormClick control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SubmitFormClick;
     }
 }
