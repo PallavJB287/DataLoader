@@ -131,72 +131,69 @@ namespace DataLoader
         protected void SubmitForm_Click(object sender, EventArgs e)
         {
             string myConnectionString = "Data Source=orcl; User Id=records; Password=records;";
+           
             OracleConnection myConnection = new OracleConnection(myConnectionString);
-            int id1 = int.Parse(this.id1.Text);
-            string leaseId = lease_id.Value;
-            string blockType = Request.Form["block_type"];
-            string nelpRound = nelp_round.Value;
-            string ministryReferenceNo = min_refno.Value;
-            string leaseNumber = lease_no.Value;
-            /*string stateName = States.SelectedItem.Text;
-            string projectName = Projects.SelectedItem.Text;
-            string blockName = Block.SelectedItem.Text;*/
-            string stateName = Request.Form["States"];
-            string projectName = Request.Form["Projects"];
-            string blockName = Request.Form["Block"];
-            string effectiveDate = eff_date.Value;
-            int extYear = int.Parse(ext_year.Value);
-            string remarks = remark.Value;
-            int areaId = int.Parse(area_id.Value);
-            ClientScript.RegisterStartupScript(this.GetType(), "connectsuccess", "alert(" + leaseNumber + ");", true);
-
-
             try
             {
-                myConnection.Open();
+                int id1 = int.Parse(this.id1.Text);
+                string leaseId = lease_id.Value;
+                string blockType = block_type.Value;
+                string nelpRound = nelp_round.Value;
+                string ministryReferenceNo = min_refno.Value;
+                string leaseNumber = lease_no.Value;
+                string stateName = States.Value;
+                string projectName = Projects.Value;
+                string blockName = Block.Value;
+                string effectiveDate = eff_date.Value;
+                int extYear = int.Parse(ext_year.Value);
+                string remarks = remark.Value;
+                int areaId = int.Parse(area_id.Value);
 
-                Console.WriteLine("hello");
+                myConnection.Open();
+                //System.Diagnostics.Debug.WriteLine("OUTPUT---" + id1 + " " + leaseId);
 
                 // Prepare SQL insert statement
-                /*string insertSql = "INSERT INTO W_LEASE_ (ID, LEASE_ID, BLOCK_TYPE, NELP_ROUND, MINISTRY_REFERENCE_NO, " +
-                    "LEASE_NUMBER, STATE_NAME, PROJECT, BLOCK_NAME, EFFECTIVE_DATE, EXT_YEAR, REMARKS, " +
-                    "INSERT_DATE, INSERT_USER, UPDATE_DATE, UPDATE_USER, AREA_ID) " +
-                    "VALUES (@id, @leaseId, @blockType, @nelpRound, @ministryReferenceNo, @leaseNumber, @stateName, " +
-                    "@projectName, @blockName, TO_DATE(@effectiveDate, 'YYYY-MM-DD'), @extYear, @remarks, " +
-                    "SYSDATE, 'admin', SYSDATE, 'admin', @areaId)";*/
+                string insertSql = "INSERT INTO W_LEASE_ (ID, LEASE_ID, BLOCK_TYPE, NELP_ROUND, MINISTRY_REFERENCE_NO, LEASE_NUMBER, STATE_NAME, PROJECT, BLOCK_NAME, EFFECTIVE_DATE, EXT_YEAR, REMARKS, INSERT_DATE, INSERT_USER, UPDATE_DATE, UPDATE_USER, AREA_ID) VALUES (:id1, :leaseId, :blockType, :nelpRound, :ministryReferenceNo, :leaseNumber, :stateName, :projectName, :blockName, TO_DATE(:effectiveDate, 'DD-MON-YYYY'), :extYear, :remarks, SYSDATE, 'admin', SYSDATE, 'admin', :areaId)";
 
-                string insertSql = "INSERT INTO W_LEASE_ (ID, LEASE_ID, BLOCK_TYPE, NELP_ROUND, MINISTRY_REFERENCE_NO, LEASE_NUMBER, STATE_NAME, PROJECT, BLOCK_NAME, EFFECTIVE_DATE, EXT_YEAR, REMARKS, INSERT_DATE, INSERT_USER, UPDATE_DATE, UPDATE_USER, AREA_ID) VALUES ('" + id1 + "','" + leaseId + "','" + blockType + "','" + nelpRound + "','" + ministryReferenceNo + "','" + leaseNumber + "','" + stateName + "','" + projectName + "','" + blockName + "','" + effectiveDate + "','" + extYear + "','" + remarks + "','" + areaId + "'); ";
-
+                //string insertSql = "INSERT INTO W_LEASE_ (ID, LEASE_ID, BLOCK_TYPE, NELP_ROUND, MINISTRY_REFERENCE_NO, LEASE_NUMBER, STATE_NAME, PROJECT, BLOCK_NAME, EFFECTIVE_DATE, EXT_YEAR, REMARKS, INSERT_DATE, INSERT_USER, UPDATE_DATE, UPDATE_USER, AREA_ID) VALUES ('" + id1 + "','" + leaseId + "','" + blockType + "','" + nelpRound + "','" + ministryReferenceNo + "','" + leaseNumber + "','" + stateName + "','" + projectName + "','" + blockName + "','TO_DATE(" + @effectiveDate + ",'YYYY-MM-DD')','" + extYear + "','" + remarks + "','" + areaId + "') ";
+                
+                //ClientScript.RegisterStartupScript(GetType(), "connectsuccess", "alert('" + insertSql + "');", true);
                 using (OracleCommand command = new OracleCommand(insertSql, myConnection))
-                {
+                {                    
+                    //ClientScript.RegisterStartupScript(GetType(), "connectsuccess", "alert('" + id1 + "');", true);
 
-                    /*// Bind parameters
-                    command.Parameters.Add("@id1", OracleType.Number).Value = id1;
-                    command.Parameters.Add("@leaseId", OracleType.VarChar).Value = leaseId;
-                    command.Parameters.Add("@blockType", OracleType.VarChar).Value = blockType;
-                    command.Parameters.Add("@nelpRound", OracleType.VarChar).Value = nelpRound;
-                    command.Parameters.Add("@ministryReferenceNo", OracleType.VarChar).Value = ministryReferenceNo;
-                    command.Parameters.Add("@leaseNumber", OracleType.VarChar).Value = leaseNumber;
-                    command.Parameters.Add("@stateName", OracleType.VarChar).Value = stateName;
-                    command.Parameters.Add("@projectName", OracleType.VarChar).Value = projectName;
-                    command.Parameters.Add("@blockName", OracleType.VarChar).Value = blockName;
-                    command.Parameters.Add("@effectiveDate", OracleType.DateTime).Value = effectiveDate;
-                    command.Parameters.Add("@extYear", OracleType.Number).Value = extYear;
-                    command.Parameters.Add("@remarks", OracleType.VarChar).Value = remarks;
-                    command.Parameters.Add("@areaId", OracleType.Number).Value = areaId;*/
+                    // Bind parameters
+                    command.Parameters.Add(":id1", OracleType.Number).Value = id1;
+                    command.Parameters.Add(":leaseId", OracleType.VarChar).Value = leaseId;
+                    command.Parameters.Add(":blockType", OracleType.VarChar).Value = blockType;
+                    command.Parameters.Add(":nelpRound", OracleType.VarChar).Value = nelpRound;
+                    command.Parameters.Add(":ministryReferenceNo", OracleType.VarChar).Value = ministryReferenceNo;
+                    command.Parameters.Add(":leaseNumber", OracleType.VarChar).Value = leaseNumber;
+                    command.Parameters.Add(":stateName", OracleType.VarChar).Value = stateName;
+                    command.Parameters.Add(":projectName", OracleType.VarChar).Value = projectName;
+                    command.Parameters.Add(":blockName", OracleType.VarChar).Value = blockName;
+                    command.Parameters.Add(":effectiveDate", OracleType.DateTime).Value = effectiveDate;
+                    command.Parameters.Add(":extYear", OracleType.Number).Value = extYear;
+                    command.Parameters.Add(":remarks", OracleType.VarChar).Value = remarks;
+                    command.Parameters.Add(":areaId", OracleType.Number).Value = areaId;
 
-
-
+                    System.Diagnostics.Debug.WriteLine("OUTPUT---" + command.Parameters);
+                    
                     // Execute the SQL statement
-                    command.ExecuteNonQuery();
-                    /*if (rowAffected > 0)
+                    int rowAffected = command.ExecuteNonQuery();
+
+                    if (rowAffected > 0)
                     {
+                        // Insertion successful
+                        System.Diagnostics.Debug.WriteLine("OUTPUT---success");
                         ClientScript.RegisterStartupScript(this.GetType(), "insertSuccess", "alert('Insertion Successful');", true);
                     }
                     else
                     {
+                        // Insertion failed
+                        System.Diagnostics.Debug.WriteLine("OUTPUT---FAILURE");
                         ClientScript.RegisterStartupScript(this.GetType(), "insertFail", "alert('Insertion Failed');", true);
-                    }*/
+                    }
                 }
 
                 myConnection.Close();
@@ -205,7 +202,7 @@ namespace DataLoader
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                System.Diagnostics.Debug.WriteLine("OUTPUT---"+ex.Message);
             }
         }
     }

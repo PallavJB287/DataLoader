@@ -20,17 +20,17 @@
                 <div class="mb-3">
                     <label for="block_type" class="form-label">BLOCK_TYPE</label>
                     <select class="form-select" id="block_type" runat="server">
-                        <option value="0">select</option>
-                        <option value="1">REL</option>
-                        <option value="2">PEL_OLD</option>
-                        <option value="3">ML</option>
-                        <option value="4">NEL</option>
-                        <option value="5">PSC</option>
-                        <option value="6">PML</option>
-                        <option value="7">PEL</option>
-                        <option value="8">JVE</option>
-                        <option value="9">HELP</option>
-                        <option value="10">DSF</option>
+                        <option>Select</option>
+                        <option value="REL">REL</option>
+                        <option value="PEL_OLD">PEL_OLD</option>
+                        <option value="ML">ML</option>
+                        <option value="NEL">NEL</option>
+                        <option value="PSC">PSC</option>
+                        <option value="PML">PML</option>
+                        <option value="PEL">PEL</option>
+                        <option value="JVE">JVE</option>
+                        <option value="HELP">HELP</option>
+                        <option value="DSF">DSF</option>
                     </select>
                 </div>
 
@@ -59,14 +59,14 @@
                 <div class="mb-3">
                     <label for="project" class="form-label">PROJECT</label>
                     <select id="Projects" class="form-select" runat="server">
-                        <option>select</option>
+                        <option>Select</option>
                     </select>
                 </div>
 
                 <div class="mb-3">
                     <label for="block_name" class="form-label">BLOCK_NAME</label>
                     <select id="Block" class="form-select" runat="server">
-                        <option>select</option>
+                        <option>Select</option>
                     </select>
                 </div>
 
@@ -89,7 +89,6 @@
                     <label for="area_id" class="form-label">AREA_ID</label>
                     <input type="number" class="form-control" id="area_id" placeholder="110" runat="server">
                 </div>
-
 
 
                 <asp:Button class="btn btn-primary" ID="SubmitFormClick" OnClick="SubmitForm_Click" Text="Submit" runat="server" />

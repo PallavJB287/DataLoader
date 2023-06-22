@@ -33,28 +33,15 @@
 
                 <div class="mb-3">
                     <label for="lat_dd" class="form-label">LAT_DD:</label>
-                    <input type="number" id="lat_dd" name="lat_dd" runat="server" class="form-control">
+                    <input type="number" id="lat_dd" name="lat_dd" runat="server" class="form-control" step="any" >
                 </div>
 
                 <div class="mb-3">
                     <label for="lon_dd" class="form-label">LON_DD:</label>
-                    <input type="number" id="lon_dd" name="lon_dd" runat="server" class="form-control">
+                    <input type="number" id="lon_dd" name="lon_dd" runat="server" class="form-control" step="any">
                 </div>
 
-
-                <%--<label for="insert_date">INSERT_DATE:</label>
-            <input type="date" id="insert_date" name="insert_date" runat="server"><br>
-          
-            <label for="insert_user">INSERT_USER_:</label>
-            <input type="text" id="insert_user" name="insert_user" runat="server"><br>
-          
-            <label for="update_date">UPDATE_DATE:</label>
-            <input type="date" id="update_date" name="update_date" runat="server"><br>
-          
-            <label for="update_user">UPDATE_USER_:</label>
-            <input type="text" id="update_user" name="update_user" runat="server"><br>--%>
-
-                <asp:Button class="btn btn-primary" ID="SubmitFormClick" Text="Submit" runat="server" />
+                <asp:Button class="btn btn-primary" ID="SubmitFormClick" OnClick="SubmitForm_Click" Text="Submit" runat="server" />
             </form>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
