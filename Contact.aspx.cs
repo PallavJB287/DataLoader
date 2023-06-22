@@ -28,10 +28,10 @@ namespace DataLoader
                 int seq1 = int.Parse(seq.Value);
                 string latStrDms = lat_str_dms.Value;
                 string lonStrDms = lon_str_dms.Value;
-                double latDd = double.Parse(lat_dd.Value);
-                double lonDd = double.Parse(lon_dd.Value);
+                double latDd = ConvertDMSToDD(latStrDms);
+                double lonDd = ConvertDMSToDD(lonStrDms);
 
-                //ClientScript.RegisterStartupScript(GetType(), "connectsuccess", "alert('" + latDd + "');", true);
+                //ClientScript.RegisterStartupScript(GetType(), "connectsuccess", "alert('" + latStrDms + "');", true);
 
                 myConnection.Open();
 
@@ -40,7 +40,7 @@ namespace DataLoader
 
                 using (OracleCommand command = new OracleCommand(insertSql, myConnection))
                 {
-                    
+
                     // Bind parameters
                     command.Parameters.Add(":id", OracleType.Number).Value = id1;
                     command.Parameters.Add(":wLeaseId", OracleType.Number).Value = wLeaseId;
@@ -75,5 +75,22 @@ namespace DataLoader
                 System.Diagnostics.Debug.WriteLine("OUTPUT--->" + ex.Message);
             }
         }
+
+        public double ConvertDMSToDD(string dmsValue)
+        {
+            // Split the DMS value into its components
+            string[] components = dmsValue.Split(' ');
+
+            // Extract the degree, minute, and second values
+            int degrees = int.Parse(components[0]);
+            int minutes = int.Parse(components[1]);
+            double seconds = double.Parse(components[2]);
+
+            // Calculate the decimal degree value
+            double ddValue = degrees + (minutes / 60.0) + (seconds / 3600.0);
+
+            return ddValue;
+        }
+
     }
 }

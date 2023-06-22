@@ -60,24 +60,6 @@ namespace DataLoader
         protected global::System.Web.UI.HtmlControls.HtmlInputText lon_str_dms;
 
         /// <summary>
-        /// lat_dd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl lat_dd;
-
-        /// <summary>
-        /// lon_dd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl lon_dd;
-
-        /// <summary>
         /// SubmitFormClick control.
         /// </summary>
         /// <remarks>

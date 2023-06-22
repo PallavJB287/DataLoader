@@ -31,16 +31,6 @@
                     <input type="text" id="lon_str_dms" name="lon_str_dms" runat="server" class="form-control">
                 </div>
 
-                <div class="mb-3">
-                    <label for="lat_dd" class="form-label">LAT_DD:</label>
-                    <input type="number" id="lat_dd" name="lat_dd" runat="server" class="form-control" step="any" >
-                </div>
-
-                <div class="mb-3">
-                    <label for="lon_dd" class="form-label">LON_DD:</label>
-                    <input type="number" id="lon_dd" name="lon_dd" runat="server" class="form-control" step="any">
-                </div>
-
                 <asp:Button class="btn btn-primary" ID="SubmitFormClick" OnClick="SubmitForm_Click" Text="Submit" runat="server" />
             </form>
         </div>
