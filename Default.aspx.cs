@@ -77,7 +77,7 @@ namespace DataLoader
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                System.Diagnostics.Debug.WriteLine("OUTPUT--->" + ex.Message);
             }
 
             try
@@ -99,7 +99,7 @@ namespace DataLoader
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                System.Diagnostics.Debug.WriteLine("OUTPUT--->" + ex.Message);
             }
 
 
@@ -122,7 +122,7 @@ namespace DataLoader
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                System.Diagnostics.Debug.WriteLine("OUTPUT--->" + ex.Message);
             }
 
         }
