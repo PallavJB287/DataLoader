@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Table.aspx.cs" Inherits="DataLoader.Table" MasterPageFile="~/Site.Master" %>
+﻿<%@ Page Title="Tabular Display" Language="C#" AutoEventWireup="true" CodeBehind="Table.aspx.cs" Inherits="DataLoader.Table" MasterPageFile="~/Site.Master" %>
 
 <%--<!DOCTYPE html>
 
@@ -15,15 +15,38 @@
 </html>--%>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <style>
+        #lease_data, #area_data, #shapepoint_data {
+            width: 300px;
+            height: 200px;
+            overflow: auto;
+        }
+
+            #lease_data div, #area_data div, #shapepoint_data div {
+                width: 100%;
+                height: 100%;
+                border-collapse: collapse;
+            }
+
+                #lease_data div table, #area_data div table, #shapepoint_data div table {
+                    width: 100%;
+                }
+
+                    #lease_data div table td, #area_data div table td, #shapepoint_data div table td, #lease_data div table th, #area_data div table th, #shapepoint_data div table th {
+                        border: 0.5px solid black;
+                    }
+    </style>
     <main>
         <div class="container w-50 border border-1 rounded rounded-3 p-5" id="lease_data">
             <h2>W_LEASE_ Data</h2>
             <asp:GridView ID="leaseGridView" runat="server"></asp:GridView>
         </div>
+        <br />
         <div class="container w-50 border border-1 rounded rounded-3 p-5" id="area_data">
             <h2>W_AREA_ Data</h2>
             <asp:GridView ID="areaGridView" runat="server"></asp:GridView>
         </div>
+        <br />
         <div class="container w-50 border border-1 rounded rounded-3 p-5" id="shapepoint_data">
             <h2>W_SHAPE_POINTS_ Data</h2>
             <asp:GridView ID="shapeGridView" runat="server"></asp:GridView>
