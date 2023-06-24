@@ -34,21 +34,22 @@
 
                     #lease_data div table td, #area_data div table td, #shapepoint_data div table td, #lease_data div table th, #area_data div table th, #shapepoint_data div table th {
                         border: 0.5px solid black;
+                        font-size: 15px;
                     }
     </style>
     <main>
+        <h2 style="text-align: center;">Lease Data</h2>
         <div class="container w-50 border border-1 rounded rounded-3 p-5" id="lease_data">
-            <h2>W_LEASE_ Data</h2>
             <asp:GridView ID="leaseGridView" runat="server"></asp:GridView>
         </div>
         <br />
+        <h2 style="text-align: center;">Area Data</h2>
         <div class="container w-50 border border-1 rounded rounded-3 p-5" id="area_data">
-            <h2>W_AREA_ Data</h2>
             <asp:GridView ID="areaGridView" runat="server"></asp:GridView>
         </div>
         <br />
+        <h2 style="text-align: center;">Shape Points Data</h2>
         <div class="container w-50 border border-1 rounded rounded-3 p-5" id="shapepoint_data">
-            <h2>W_SHAPE_POINTS_ Data</h2>
             <asp:GridView ID="shapeGridView" runat="server"></asp:GridView>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
