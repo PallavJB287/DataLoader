@@ -1,18 +1,5 @@
 ﻿<%@ Page Title="Tabular Display" Language="C#" AutoEventWireup="true" CodeBehind="Table.aspx.cs" Inherits="DataLoader.Table" MasterPageFile="~/Site.Master" %>
 
-<%--<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-        </div>
-    </form>
-</body>
-</html>--%>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <style>
@@ -40,17 +27,48 @@
     <main>
         <h2 style="text-align: center;">Lease Data</h2>
         <div class="container w-50 border border-1 rounded rounded-3 p-5" id="lease_data">
-            <asp:GridView ID="leaseGridView" runat="server"></asp:GridView>
+            <asp:GridView ID="leaseGridView" runat="server">
+                <%-- %><Columns>
+                    <asp:BoundField HeaderText="ID" DataField="ID" ItemStyle-Width="100px" />
+                <asp:BoundField HeaderText="LEASE ID" DataField="LEASE_ID" ItemStyle-Width="150px" />
+                <asp:BoundField HeaderText="BLOCK TYPE" DataField="BLOCK_TYPE" ItemStyle-Width="150px" />
+                <asp:BoundField HeaderText="NELP ROUND" DataField="NELP_ROUND" ItemStyle-Width="150px" />
+                    <asp:TemplateField HeaderText="Actions">
+                        <ItemTemplate>
+                            <asp:Button ID="DeleteButton" runat="server" Text="Delete" CommandName="Delete" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-danger" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>--%>
+
+            </asp:GridView>
         </div>
+
         <br />
         <h2 style="text-align: center;">Area Data</h2>
         <div class="container w-50 border border-1 rounded rounded-3 p-5" id="area_data">
-            <asp:GridView ID="areaGridView" runat="server"></asp:GridView>
+            <asp:GridView ID="areaGridView" runat="server">
+                <%-- %><Columns>
+                    <asp:TemplateField HeaderText="Actions">
+                        <ItemTemplate>
+                            <asp:Button ID="DeleteButton" runat="server" Text="Delete" CommandName="Delete" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-danger" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>--%>
+            </asp:GridView>
         </div>
+
         <br />
         <h2 style="text-align: center;">Shape Points Data</h2>
         <div class="container w-50 border border-1 rounded rounded-3 p-5" id="shapepoint_data">
-            <asp:GridView ID="shapeGridView" runat="server"></asp:GridView>
+            <asp:GridView ID="shapeGridView" runat="server">
+                <%-- %><Columns>
+                    <asp:TemplateField HeaderText="Actions">
+                        <ItemTemplate>
+                            <asp:Button ID="DeleteButton" runat="server" Text="Delete" CommandName="Delete" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-danger" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>--%>
+            </asp:GridView>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 

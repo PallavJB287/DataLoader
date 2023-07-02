@@ -90,7 +90,7 @@ namespace DataLoader
                     {
                         while (reader.Read())
                         {
-                            string name = reader.GetString(2);
+                            string name = reader.GetString(6);
                             Projects.Items.Add(name);
                         }
                     }

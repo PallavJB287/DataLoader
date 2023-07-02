@@ -14,7 +14,10 @@ namespace DataLoader
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                System.Diagnostics.Debug.WriteLine("OUTPUT--->SUCCESS");
+            }
         }
 
         protected void SubmitForm_Click(object sender, EventArgs e)
